@@ -1,11 +1,19 @@
+import Line.Line
+
 fun main() {
 
-    val line = inputLine();
-    val sentence = Sentence(line);
+    val line = readStringFromConsole();
+    val sentence = Line(line);
     println(sentence.changeEquidistantWordsInLine())
 }
 
-fun inputLine (): String {
-    println("Enter a line:")
-    return readLine().toString().trim();
-};
+    fun readStringFromConsole(): String {
+        print("Enter line: ")
+        val input = readLine()
+        if (input.isNullOrEmpty()) {
+            println("Please repeat it again")
+            return readStringFromConsole()
+        }
+        return input.trim();
+    }
+

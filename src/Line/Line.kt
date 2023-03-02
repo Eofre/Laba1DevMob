@@ -1,4 +1,6 @@
-class Sentence (val line: String = "Hello world!") {
+package Line
+
+class Line (val value: String = "Hello world!") {
 
     private fun reverse(list: List<String>): MutableList<String>  {
         val result: MutableList<String> = mutableListOf();
@@ -9,5 +11,5 @@ class Sentence (val line: String = "Hello world!") {
         return result;
     }
 
-    fun changeEquidistantWordsInLine(): String  = reverse(line.split(" ")).joinToString(" ");
+    fun changeEquidistantWordsInLine(): String  = reverse(value.split(" ")).joinToString(" ");
 }
